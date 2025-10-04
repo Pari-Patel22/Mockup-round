@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Gussing Game</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+    <script src="script.js"></script>
+
+<section>
+     <div class="box">
+    <h2>🎯 Guess My Number (1–20)</h2>
+
+    <!-- user set secret number -->
+    <p>Set Secret Number: <input type="number" id="secret" value="7"></p>
+
+    <input type="number" id="guess" placeholder="Enter guess">
+    <button onclick="checkGuess()">Check</button>
+    <button onclick="restart()">Restart</button>
+
+    <p id="message">Start guessing...</p>
+    <p>Attempts: <span id="attempts">0</span></p>
+  </div>
+</section>
+
+
+   <script>
+    let secret = document.getElementById("secret").value; 
+    let attempts = 0;
+
+    function checkGuess() {
+      secret = document.getElementById("secret").value; // take secret set by user
+      let guess = document.getElementById("guess").value;
+      let msg = document.getElementById("message");
+
+      attempts++;
+      document.getElementById("attempts").textContent = attempts;
+
+      if (guess == secret) {
+        msg.textContent = "🎉 Correct! The number was " + secret;
+      } else if (guess > secret) {
+        msg.textContent = "📈 Too high!";
+      } else {
+        msg.textContent = "📉 Too low!";
+      }
+    }
+
+    function restart() {
+      attempts = 0;
+      document.getElementById("attempts").textContent = attempts;
+      document.getElementById("message").textContent = "Start guessing...";
+      document.getElementById("guess").value = "";
+    }
+  </script>
+</body>
+</html>

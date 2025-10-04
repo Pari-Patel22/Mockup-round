@@ -1,0 +1,21 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+ body { 
+    font-family: Arial; 
+    text-align: center; 
+    background: lightblue; 
+}
+.box { 
+         background: white;
+         padding: 20px; 
+         margin: 50px auto; 
+         width: 300px; 
+         border-radius: 8px;
+    }
+    input, button { 
+        padding: 8px; 
+        margin: 5px; 
+    }
